@@ -17,9 +17,9 @@
             overflow-x: hidden;
         }
         nav {
-            background: #2c3e50; /* Changed navbar color */
+            background: #34495e; /* Updated navbar color */
             color: #fff;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem; /* Increased padding for bigger size */
             position: fixed;
             width: 100%;
             top: 0;
@@ -30,21 +30,22 @@
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            justify-content: space-around; /* Stretch text further along the page */
             padding: 0;
-            flex-wrap: wrap; /* Allow wrapping to utilize full width */
         }
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
+            font-size: 1.2rem; /* Increased font size */
+            transition: color 0.3s, transform 0.3s; /* Added transform transition */
         }
         nav ul li a:hover {
             color: #ff9800;
+            transform: scale(1.1); /* Enlarges on hover */
         }
         header {
             background: linear-gradient(135deg, #1f3b73, #ff9800);
@@ -68,7 +69,7 @@
             animation: fadeInUp 1s ease-in-out;
         }
         header .cta {
-            margin-top: 40px; /* Increased margin-top to move the button down */
+            margin-top: 60px; /* Increased margin-top to move the button down further */
             padding: 12px 25px;
             background: #fff;
             color: #1f3b73;
@@ -304,26 +305,26 @@
             <p>Outside of my professional life, I am passionate about cooking and love experimenting with new recipes. I'm an avid skier and I enjoy spending time outdoors. Philadelphia Eagles, Philadelphia Phillies, and Philadelphia Flyers fan. In my spare time, I also dabble in photography (Nikon z5, Nikon F4). I have a wonderful wife, Beth, and we share our home with our energetic husky, Luna.</p>
         </section>
         <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p>Feel free to get in touch! Networking, relationship building, sounding board - I am all ears:</p>
-    <p>Email: <a href="mailto:cwenar@gmail.com">cwenar@gmail.com</a></p>
-    <p>Phone: 267-265-1792</p>
-    <form action="https://formsubmit.co/cwenar@gmail.com" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        
-        <button type="submit">Send</button>
-    </form>
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/bob-cwenar-75617860" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-</section>
+            <h2>Contact</h2>
+            <p>Feel free to get in touch! Networking, relationship building, sounding board - I am all ears:</p>
+            <p>Email: <a href="mailto:cwenar@gmail.com">cwenar@gmail.com</a></p>
+            <p>Phone: 267-265-1792</p>
+            <form action="https://formsubmit.co/cwenar@gmail.com" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/bob-cwenar-75617860" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
         <section class="section" id="resume">
             <h2>Download My Resume</h2>
             <a href="Cwenar_Resume.pdf.pdf" class="resume-download" download>Download PDF</a>
