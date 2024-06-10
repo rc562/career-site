@@ -25,6 +25,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s ease-in-out;
         }
         nav ul {
             list-style: none;
@@ -230,6 +231,18 @@
             color: #ff9800;
             transform: scale(1.1);
         }
+
+        /* Hide the navbar initially */
+        .navbar-hidden {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Show the navbar when hovered */
+        .navbar-visible {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -346,6 +359,10 @@
                     hideNavbar();
                 }
             });
+
+            // Event listener for mouse hover
+            navbar.addEventListener("mouseover", showNavbar);
+            navbar.addEventListener("mouseout", hideNavbar);
 
             // Scroll animations
             const sections = document.querySelectorAll('.section, header');
