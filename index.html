@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robert J. Cwenar - Talent Acquisition Consultant</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -14,17 +13,15 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            overflow-x: hidden;
         }
         nav {
             background: #1f3b73;
             color: #fff;
-            padding: 1rem 2rem;
+            padding: 1rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav ul {
             list-style: none;
@@ -39,60 +36,45 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #ff9800;
         }
         header {
             background: linear-gradient(135deg, #1f3b73, #ff9800);
             color: #fff;
-            padding: 6rem 2rem;
+            padding: 5rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            margin-top: 60px; /* Space for fixed nav */
         }
         header h1 {
             margin: 0;
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            animation: fadeInDown 1s ease-in-out;
         }
         header p {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 400;
-            animation: fadeInUp 1s ease-in-out;
         }
         header .cta {
             margin-top: 20px;
-            padding: 12px 25px;
+            padding: 10px 20px;
             background: #fff;
             color: #1f3b73;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 1.2rem;
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out;
         }
         header .cta:hover {
             background: #ff9800;
             color: #fff;
-            transform: scale(1.05);
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
         .section {
             padding: 60px 20px;
@@ -107,7 +89,7 @@
             transform: translateY(-10px);
         }
         h2 {
-            color: #1f3b73;
+            color: #ff9800;
             margin-bottom: 20px;
             font-size: 3rem;
             font-family: 'Montserrat', sans-serif;
@@ -121,12 +103,8 @@
             width: 100%;
             max-width: 500px;
             height: auto;
-            border-radius: 10px;
+            border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-        .profile-img img:hover {
-            transform: scale(1.05);
         }
         .experience {
             display: flex;
@@ -139,10 +117,6 @@
             margin-right: 20px;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-        .experience img:hover {
-            transform: scale(1.1);
         }
         form {
             display: flex;
@@ -162,34 +136,32 @@
             max-width: 400px;
         }
         form button {
-            padding: 12px 25px;
-            background: #1f3b73;
+            padding: 10px 20px;
+            background: #ff9800;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1.2rem;
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+            font-size: 1rem;
+            transition: background 0.3s ease-in-out;
         }
         form button:hover {
-            background: #142a5b;
-            transform: scale(1.05);
+            background: #e68900;
         }
         .resume-download {
             margin-top: 20px;
-            padding: 12px 25px;
-            background: #1f3b73;
+            padding: 10px 20px;
+            background: #ff9800;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+            font-size: 1rem;
+            transition: background 0.3s ease-in-out;
         }
         .resume-download:hover {
-            background: #142a5b;
-            transform: scale(1.05);
+            background: #e68900;
         }
         .social-links {
             display: flex;
@@ -200,19 +172,17 @@
             color: #1f3b73;
             margin: 0 10px;
             font-size: 1.5rem;
-            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out;
         }
         .social-links a:hover {
             color: #ff9800;
-            transform: scale(1.1);
         }
         footer {
             background: #1f3b73;
             color: #fff;
-            padding: 20px 0;
+            padding: 10px 0;
             margin-top: 20px;
             text-align: center;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
         }
         footer ul {
             list-style: none;
@@ -225,11 +195,6 @@
         footer ul li a {
             color: #fff;
             text-decoration: none;
-            transition: color 0.3s, transform 0.3s;
-        }
-        footer ul li a:hover {
-            color: #ff9800;
-            transform: scale(1.1);
         }
     </style>
 </head>
@@ -259,35 +224,35 @@
         <section class="section" id="career-experience">
             <h2>Career Experience</h2>
             <div class="experience">
-                <img src="images/logo-kingsleygate.jpg" alt="Kingsley Gate Partners">
+                <img src="logo-kingsleygate.jpg" alt="Kingsley Gate Partners">
                 <div>
                     <h3>Vice President - Kingsley Gate Partners (August 2022 – May 2024)</h3>
                     <p>Led a team to execute mid-level and executive-level searches for various industries including Renewable Energy, Consumer Technology, and Medical Devices. Achieved over $600K in search fees in FY 2023.</p>
                 </div>
             </div>
             <div class="experience">
-                <img src="images/logo-gattihr.png" alt="GattiHR">
+                <img src="logo-gattihr.png" alt="GattiHR">
                 <div>
                     <h3>Vice President - GattiHR (January 2016 – August 2022)</h3>
                     <p>Promoted to lead searches and develop client relationships. Managed significant client relationships and generated year-over-year revenue growth.</p>
                 </div>
             </div>
             <div class="experience">
-                <img src="images/logo-gattihr.png" alt="GattiHR">
+                <img src="logo-gattihr.png" alt="GattiHR">
                 <div>
                     <h3>Director - GattiHR (May 2018 – April 2022)</h3>
                     <p>Led recruiting projects and supported onboarding and internal operational excellence. Generated over $1.2 million in revenue with the Managing Director.</p>
                 </div>
             </div>
             <div class="experience">
-                <img src="images/logo-gattihr.png" alt="GattiHR">
+                <img src="logo-gattihr.png" alt="GattiHR">
                 <div>
                     <h3>Senior Associate - GattiHR (January 2016 – May 2018)</h3>
                     <p>Assisted in search needs and managed candidate development. Produced quarterly articles and marketing content for social media.</p>
                 </div>
             </div>
             <div class="experience">
-                <img src="images/logo-armstrongfranklin.jpg" alt="Armstrong Franklin">
+                <img src="logo-armstrongfranklin.jpg" alt="Armstrong Franklin">
                 <div>
                     <h3>Associate - Armstrong Franklin (June 2014 – January 2016)</h3>
                     <p>Managed the recruiting process and provided market data to assist in decision-making. Conducted references and assisted in negotiation processes during the offer stage.</p>
@@ -316,7 +281,7 @@
                 <button type="submit">Send</button>
             </form>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/bob-cwenar-75617860?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrkUDnVWDSnS46WAcbmy5ZA%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com" target="_https://www.linkedin.com/in/bob-cwenar-75617860?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrkUDnVWDSnS46WAcbmy5ZA%3D%3D"><i class="https://www.linkedin.com/in/bob-cwenar-75617860?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrkUDnVWDSnS46WAcbmy5ZA%3D%3D"></i></a>
             </div>
         </section>
         <section class="section" id="resume">
