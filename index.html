@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robert J. Cwenar - Talent Acquisition Consultant</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -36,6 +37,10 @@
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff9800;
         }
         header {
             background: linear-gradient(135deg, #1f3b73, #ff9800);
@@ -50,11 +55,13 @@
             font-size: 3.5rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+            animation: fadeInDown 1s ease-in-out;
         }
         header p {
             margin: 0;
             font-size: 1.8rem;
             font-weight: 400;
+            animation: fadeInUp 1s ease-in-out;
         }
         header .cta {
             margin-top: 20px;
@@ -70,6 +77,14 @@
         header .cta:hover {
             background: #ff9800;
             color: #fff;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .container {
             max-width: 1200px;
@@ -180,7 +195,7 @@
         footer {
             background: #1f3b73;
             color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             margin-top: 20px;
             text-align: center;
         }
@@ -195,6 +210,10 @@
         footer ul li a {
             color: #fff;
             text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer ul li a:hover {
+            color: #ff9800;
         }
     </style>
 </head>
@@ -281,12 +300,12 @@
                 <button type="submit">Send</button>
             </form>
             <div class="social-links">
-                <a href="https://www.linkedin.com" target="_https://www.linkedin.com/in/bob-cwenar-75617860?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrkUDnVWDSnS46WAcbmy5ZA%3D%3D"><i class="https://www.linkedin.com/in/bob-cwenar-75617860?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrkUDnVWDSnS46WAcbmy5ZA%3D%3D"></i></a>
+                <a href="https://www.linkedin.com/in/bob-cwenar-75617860?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrkUDnVWDSnS46WAcbmy5ZA%3D%3D" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </section>
         <section class="section" id="resume">
             <h2>Download My Resume</h2>
-            <a href="Cwenar_Resume.pdf.pdf" class="resume-download" download>Download PDF</a>
+            <a href="Cwenar_Resume.pdf" class="resume-download" download>Download PDF</a>
         </section>
     </div>
     <footer>
