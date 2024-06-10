@@ -319,6 +319,55 @@
             <li><a href="#resume">Resume</a></li>
         </ul>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbar = document.querySelector("nav");
+            
+            // Initially hide the navbar
+            navbar.classList.add("navbar-hidden");
+
+            // Function to show the navbar
+            function showNavbar() {
+                navbar.classList.remove("navbar-hidden");
+                navbar.classList.add("navbar-visible");
+            }
+
+            // Function to hide the navbar
+            function hideNavbar() {
+                navbar.classList.remove("navbar-visible");
+                navbar.classList.add("navbar-hidden");
+            }
+
+            // Event listener for mouse movement
+            document.addEventListener("mousemove", function(event) {
+                if (event.clientY < 50) { // Adjust this value based on sensitivity
+                    showNavbar();
+                } else {
+                    hideNavbar();
+                }
+            });
+
+            // Scroll animations
+            const sections = document.querySelectorAll('.section, header');
+            const options = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
