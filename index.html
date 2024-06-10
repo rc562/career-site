@@ -17,7 +17,7 @@
             overflow-x: hidden;
         }
         nav {
-            background: #1f3b73;
+            background: #2c3e50; /* Changed navbar color */
             color: #fff;
             padding: 1rem 2rem;
             position: fixed;
@@ -32,6 +32,7 @@
             display: flex;
             justify-content: center;
             padding: 0;
+            flex-wrap: wrap; /* Allow wrapping to utilize full width */
         }
         nav ul li {
             margin: 0 15px;
@@ -48,7 +49,7 @@
         header {
             background: linear-gradient(135deg, #1f3b73, #ff9800);
             color: #fff;
-            padding: 6rem 2rem 10rem; /* Increased bottom padding to avoid overlap */
+            padding: 6rem 2rem 10rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -67,7 +68,7 @@
             animation: fadeInUp 1s ease-in-out;
         }
         header .cta {
-            margin-top: 40px; /* Increased margin-top */
+            margin-top: 40px; /* Increased margin-top to move the button down */
             padding: 12px 25px;
             background: #fff;
             color: #1f3b73;
@@ -163,7 +164,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             width: 100%;
-            max-width: 400px;
+            max-width: 600px; /* Increased max-width for wider input fields */
         }
         form button {
             padding: 12px 25px;
