@@ -6,6 +6,7 @@
     <title>Robert J. Cwenar - Talent Acquisition Consultant</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -17,7 +18,7 @@
             overflow-x: hidden;
         }
         nav {
-            background: #2c3e50; /* Changed navbar color */
+            background: #2c3e50;
             color: #fff;
             padding: 1rem 2rem;
             position: fixed;
@@ -32,7 +33,7 @@
             display: flex;
             justify-content: center;
             padding: 0;
-            flex-wrap: wrap; /* Allow wrapping to utilize full width */
+            flex-wrap: wrap;
         }
         nav ul li {
             margin: 0 15px;
@@ -68,7 +69,7 @@
             animation: fadeInUp 1s ease-in-out;
         }
         header .cta {
-            margin-top: 40px; /* Increased margin-top to move the button down */
+            margin-top: 40px;
             padding: 12px 25px;
             background: #fff;
             color: #1f3b73;
@@ -164,7 +165,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             width: 100%;
-            max-width: 600px; /* Increased max-width for wider input fields */
+            max-width: 600px;
         }
         form button {
             padding: 12px 25px;
@@ -248,6 +249,11 @@
             opacity: 1;
             transition: opacity 0.3s ease-in-out;
         }
+
+        #map {
+            height: 600px;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
@@ -268,13 +274,13 @@
     <div class="container">
         <section class="section" id="home">
             <div class="profile-img">
-                <img src="bob-cwenar.jpg.jpg" alt="Bob Cwenar">
+                <img src="bob-cwenar.jpg" alt="Bob Cwenar">
             </div>
             <h2>About Me</h2>
             <p>Hi, I'm Bob Cwenar. With over a decade of experience in Talent Acquisition, I've had the pleasure of helping businesses grow and thrive by finding and nurturing top talent. My journey in the global executive search industry has been incredibly rewarding, filled with opportunities to lead dynamic teams and build lasting relationships with clients from various industries. I specialize in full-cycle recruiting, business development, and using market data to provide strategic insights. My goal is always to make the recruiting process as smooth and effective as possible, utilizing the latest technologies and CRMs to support organizational success. Let's connect and see how we can achieve great things together!</p>
         </section>
         <section class="section" id="career-experience">
-            <h2>Career Journey</h2>
+            <h2>Career Experience</h2>
             <div class="experience-container">
                 <div class="experience">
                     <img src="logo-kingsleygate.jpg" alt="Kingsley Gate Partners">
@@ -304,29 +310,30 @@
             <p>Outside of my professional life, I am passionate about cooking and love experimenting with new recipes. I'm an avid skier and I enjoy spending time outdoors. Philadelphia Eagles, Philadelphia Phillies, and Philadelphia Flyers fan. In my spare time, I also dabble in photography (Nikon z5, Nikon F4). I have a wonderful wife, Beth, and we share our home with our energetic husky, Luna.</p>
         </section>
         <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p>Feel free to get in touch! Networking, relationship building, sounding board - I am all ears:</p>
-    <p>Email: <a href="mailto:cwenar@gmail.com">cwenar@gmail.com</a></p>
-    <p>Phone: 267-265-1792</p>
-    <form action="https://formsubmit.co/cwenar@gmail.com" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        
-        <button type="submit">Send</button>
-    </form>
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/bob-cwenar-75617860" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-</section>
+            <h2>Contact</h2>
+            <p>Feel free to get in touch! Networking, relationship building, sounding board - I am all ears:</p>
+            <p>Email: <a href="mailto:cwenar@gmail.com">cwenar@gmail.com</a></p>
+            <p>Phone: 267-265-1792</p>
+            <form action="https://formsubmit.co/cwenar@gmail.com" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+            <div id="map"></div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/bob-cwenar-75617860" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
         <section class="section" id="resume">
             <h2>Download My Resume</h2>
-            <a href="Cwenar_Resume.pdf.pdf" class="resume-download" download>Download PDF</a>
+            <a href="Cwenar_Resume.pdf" class="resume-download" download>Download PDF</a>
         </section>
     </div>
     <footer>
@@ -339,6 +346,7 @@
             <li><a href="#resume">Resume</a></li>
         </ul>
     </footer>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const navbar = document.querySelector("nav");
@@ -390,6 +398,31 @@
             sections.forEach(section => {
                 observer.observe(section);
             });
+
+            // Initialize the map
+            const map = L.map('map').setView([20, 0], 2); // Center the map at (20, 0) with zoom level 2
+
+            // Add a tile layer to the map (this is from OpenStreetMap)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Function to handle map clicks
+            function onMapClick(e) {
+                const lat = e.latlng.lat;
+                const lng = e.latlng.lng;
+
+                // Add a marker at the clicked location
+                L.marker([lat, lng]).addTo(map)
+                    .bindPopup(`Location: ${lat.toFixed(2)}, ${lng.toFixed(2)}`)
+                    .openPopup();
+
+                // Optionally, send this data to your server or handle it as needed
+                console.log(`Location clicked: ${lat}, ${lng}`);
+            }
+
+            // Attach the click event handler to the map
+            map.on('click', onMapClick);
         });
     </script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
