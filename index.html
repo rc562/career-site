@@ -67,7 +67,7 @@
             animation: fadeInUp 1s ease-in-out;
         }
         header .cta {
-            margin-top: 20px;
+            margin-top: 50px; /* Adjusted margin to prevent overlapping */
             padding: 12px 25px;
             background: #fff;
             color: #1f3b73;
@@ -113,16 +113,6 @@
             font-size: 3rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            transition: transform 0.3s ease-in-out;
-        }
-        h2:hover {
-            transform: scale(1.1);
-        }
-        p {
-            transition: transform 0.3s ease-in-out;
-        }
-        p:hover {
-            transform: scale(1.1);
         }
         .profile-img {
             text-align: center;
@@ -146,17 +136,19 @@
         .experience {
             display: flex;
             align-items: center;
-            transition: transform 0.3s ease-in-out;
-        }
-        .experience:hover {
-            transform: scale(1.1);
+            gap: 20px; /* Added gap to ensure spacing */
         }
         .experience img {
             width: 100px;
             height: auto;
-            margin-right: 20px;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .experience p {
+            transition: transform 0.3s ease-in-out;
+        }
+        .experience p:hover {
+            transform: scale(1.1);
         }
         form {
             display: flex;
