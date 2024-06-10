@@ -48,7 +48,7 @@
         header {
             background: linear-gradient(135deg, #1f3b73, #ff9800);
             color: #fff;
-            padding: 6rem 2rem;
+            padding: 6rem 2rem 10rem; /* Increased bottom padding to avoid overlap */
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -67,7 +67,7 @@
             animation: fadeInUp 1s ease-in-out;
         }
         header .cta {
-            margin-top: 50px; /* Adjusted margin to prevent overlapping */
+            margin-top: 40px; /* Increased margin-top */
             padding: 12px 25px;
             background: #fff;
             color: #1f3b73;
@@ -136,19 +136,17 @@
         .experience {
             display: flex;
             align-items: center;
-            gap: 20px; /* Added gap to ensure spacing */
+            gap: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .experience:hover {
+            transform: scale(1.1);
         }
         .experience img {
             width: 100px;
             height: auto;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .experience p {
-            transition: transform 0.3s ease-in-out;
-        }
-        .experience p:hover {
-            transform: scale(1.1);
         }
         form {
             display: flex;
