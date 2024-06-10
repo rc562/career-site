@@ -41,6 +41,31 @@
             border-radius: 50%;
             max-width: 200px;
         }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        form input, form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            padding: 10px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background: #555;
+        }
     </style>
 </head>
 <body>
@@ -74,10 +99,19 @@
             <p>Feel free to reach out to me at:</p>
             <p>Email: <a href="mailto:cwenar@gmail.com">cwenar@gmail.com</a></p>
             <p>Phone: 267-265-1792</p>
+            <form action="https://formsubmit.co/cwenar@gmail.com" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
         </section>
     </div>
 </body>
 </html>
-```
-
-Please replace `your-photo.jpg` with the actual filename of your picture. Save this code in a file named `index.html` and upload it along with your image to your hosting service. If you need any further assistance, feel free to ask!
