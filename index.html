@@ -15,6 +15,7 @@
             background-color: #f4f4f4;
             color: #333;
             overflow-x: hidden;
+            margin-top: 50px; /* Add some margin to prevent content from being hidden */
         }
         nav {
             background: #1f3b73;
@@ -25,6 +26,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s;
         }
         nav ul {
             list-style: none;
@@ -230,6 +232,13 @@
             color: #ff9800;
             transform: scale(1.1);
         }
+        .navbar-hidden {
+            top: -100px; /* Adjust based on navbar height */
+        }
+
+        .navbar-visible {
+            top: 0;
+        }
     </style>
 </head>
 <body>
@@ -334,5 +343,34 @@
         </ul>
     </footer>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const navbar = document.querySelector("nav");
+            
+            // Initially hide the navbar
+            navbar.classList.add("navbar-hidden");
+
+            // Function to show the navbar
+            function showNavbar() {
+                navbar.classList.remove("navbar-hidden");
+                navbar.classList.add("navbar-visible");
+            }
+
+            // Function to hide the navbar
+            function hideNavbar() {
+                navbar.classList.remove("navbar-visible");
+                navbar.classList.add("navbar-hidden");
+            }
+
+            // Event listener for mouse movement
+            document.addEventListener("mousemove", function(event) {
+                if (event.clientY < 50) { // Adjust this value based on sensitivity
+                    showNavbar();
+                } else {
+                    hideNavbar();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
