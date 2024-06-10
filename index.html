@@ -14,12 +14,36 @@
             background-color: #f4f4f4;
             color: #333;
         }
+        nav {
+            background: #1f3b73;
+            color: #fff;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
         header {
             background: linear-gradient(135deg, #1f3b73, #ff9800);
             color: #fff;
-            padding: 3rem 0;
+            padding: 5rem 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            margin-top: 60px; /* Space for fixed nav */
         }
         header h1 {
             margin: 0;
@@ -31,6 +55,21 @@
             margin: 0;
             font-size: 1.8rem;
             font-weight: 400;
+        }
+        header .cta {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #fff;
+            color: #1f3b73;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s ease-in-out;
+        }
+        header .cta:hover {
+            background: #ff9800;
+            color: #fff;
         }
         .container {
             max-width: 1200px;
@@ -79,6 +118,20 @@
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .testimonial {
+            max-width: 800px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
         form {
             display: flex;
             flex-direction: column;
@@ -124,6 +177,20 @@
         .resume-download:hover {
             background: #e68900;
         }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .social-links a {
+            color: #1f3b73;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease-in-out;
+        }
+        .social-links a:hover {
+            color: #ff9800;
+        }
         footer {
             background: #1f3b73;
             color: #fff;
@@ -131,12 +198,34 @@
             margin-top: 20px;
             text-align: center;
         }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#career-experience">Experience</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
+    </nav>
     <header>
         <h1>Robert J. Cwenar</h1>
         <p>Talent Acquisition Consultant</p>
+        <button class="cta">Let's Connect</button>
     </header>
     <div class="container">
         <section class="section" id="home">
@@ -184,6 +273,17 @@
                 </div>
             </div>
         </section>
+        <section class="section" id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Bob has been an invaluable asset to our team. His expertise in talent acquisition and his strategic approach have significantly improved our recruitment process." - Jane Doe, CEO</p>
+                </div>
+                <div class="testimonial">
+                    <p>"Working with Bob has been a game-changer. His ability to find top talent and his dedication to his work are truly commendable." - John Smith, HR Manager</p>
+                </div>
+            </div>
+        </section>
         <section class="section" id="hobbies">
             <h2>Hobbies and Interests</h2>
             <p>Outside of my professional life, I am passionate about cooking and love experimenting with new recipes. I'm an avid skier and golfer, and I enjoy spending time outdoors. In my spare time, I also dabble in amateur photography. I have a wonderful wife, Beth, and we share our home with our energetic husky, Luna.</p>
@@ -205,14 +305,25 @@
                 
                 <button type="submit">Send</button>
             </form>
+            <div class="social-links">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
         </section>
         <section class="section" id="resume">
             <h2>Download My Resume</h2>
-            <a href="Cwenar_Resume.pdf" class="resume-download" download>Download PDF</a>
+            <a href="Cwenar_Resume.pdf.pdf" class="resume-download" download>Download PDF</a>
         </section>
     </div>
     <footer>
         <p>&copy; 2024 Robert J. Cwenar. All Rights Reserved. Thanks for stopping by.</p>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#career-experience">Experience</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#resume">Resume</a></li>
+        </ul>
     </footer>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
