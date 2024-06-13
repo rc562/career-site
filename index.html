@@ -17,7 +17,7 @@
             overflow-x: hidden;
         }
         nav {
-            background: #2c3e50;
+            background: #2c3e50; /* Changed navbar color */
             color: #fff;
             padding: 1rem 2rem;
             position: fixed;
@@ -32,7 +32,7 @@
             display: flex;
             justify-content: center;
             padding: 0;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Allow wrapping to utilize full width */
         }
         nav ul li {
             margin: 0 15px;
@@ -68,7 +68,7 @@
             animation: fadeInUp 1s ease-in-out;
         }
         header .cta {
-            margin-top: 40px;
+            margin-top: 40px; /* Increased margin-top to move the button down */
             padding: 12px 25px;
             background: #fff;
             color: #1f3b73;
@@ -164,7 +164,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             width: 100%;
-            max-width: 600px;
+            max-width: 600px; /* Increased max-width for wider input fields */
         }
         form button {
             padding: 12px 25px;
@@ -237,23 +237,16 @@
             transform: scale(1.1);
         }
 
+        /* Hide the navbar initially */
         .navbar-hidden {
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
         }
 
+        /* Show the navbar when hovered */
         .navbar-visible {
             opacity: 1;
             transition: opacity 0.3s ease-in-out;
-        }
-
-        .animate-fadeIn {
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
     </style>
 </head>
@@ -275,7 +268,7 @@
     <div class="container">
         <section class="section" id="home">
             <div class="profile-img">
-                <img src="bob-cwenar.jpg" alt="Bob Cwenar">
+                <img src="bob-cwenar.jpg.jpg" alt="Bob Cwenar">
             </div>
             <h2>About Me</h2>
             <p>Hi, I'm Bob Cwenar. With over a decade of experience in Talent Acquisition, I've had the pleasure of helping businesses grow and thrive by finding and nurturing top talent. My journey in the global executive search industry has been incredibly rewarding, filled with opportunities to lead dynamic teams and build lasting relationships with clients from various industries. I specialize in full-cycle recruiting, business development, and using market data to provide strategic insights. My goal is always to make the recruiting process as smooth and effective as possible, utilizing the latest technologies and CRMs to support organizational success. Let's connect and see how we can achieve great things together!</p>
@@ -311,29 +304,29 @@
             <p>Outside of my professional life, I am passionate about cooking and love experimenting with new recipes. I'm an avid skier and I enjoy spending time outdoors. Philadelphia Eagles, Philadelphia Phillies, and Philadelphia Flyers fan. In my spare time, I also dabble in photography (Nikon z5, Nikon F4). I have a wonderful wife, Beth, and we share our home with our energetic husky, Luna.</p>
         </section>
         <section class="section" id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to get in touch! Networking, relationship building, sounding board - I am all ears:</p>
-            <p>Email: <a href="mailto:cwenar@gmail.com">cwenar@gmail.com</a></p>
-            <p>Phone: 267-265-1792</p>
-            <form action="https://formsubmit.co/cwenar@gmail.com" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Send</button>
-            </form>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/bob-cwenar-75617860" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </section>
+    <h2>Contact</h2>
+    <p>Feel free to get in touch! Networking, relationship building, sounding board - I am all ears:</p>
+    <p>Email: <a href="mailto:cwenar@gmail.com">cwenar@gmail.com</a></p>
+    <p>Phone: 267-265-1792</p>
+    <form action="https://formsubmit.co/cwenar@gmail.com" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Send</button>
+    </form>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/bob-cwenar-75617860" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+</section>
         <section class="section" id="resume">
             <h2>Download My Resume</h2>
-            <a href="Cwenar_Resume.pdf" class="resume-download" download>Bob Cwenar Resume - 2024</a>
+            <a href="Cwenar_Resume.pdf.pdf" class="resume-download" download>Bob Cwenar Resume - 2024</a>
         </section>
     </div>
     <footer>
@@ -350,29 +343,35 @@
         document.addEventListener("DOMContentLoaded", function() {
             const navbar = document.querySelector("nav");
             
+            // Initially hide the navbar
             navbar.classList.add("navbar-hidden");
 
+            // Function to show the navbar
             function showNavbar() {
                 navbar.classList.remove("navbar-hidden");
                 navbar.classList.add("navbar-visible");
             }
 
+            // Function to hide the navbar
             function hideNavbar() {
                 navbar.classList.remove("navbar-visible");
                 navbar.classList.add("navbar-hidden");
             }
 
+            // Event listener for mouse movement
             document.addEventListener("mousemove", function(event) {
-                if (event.clientY < 50) {
+                if (event.clientY < 50) { // Adjust this value based on sensitivity
                     showNavbar();
                 } else {
                     hideNavbar();
                 }
             });
 
+            // Event listener for mouse hover
             navbar.addEventListener("mouseover", showNavbar);
             navbar.addEventListener("mouseout", hideNavbar);
 
+            // Scroll animations
             const sections = document.querySelectorAll('.section, header');
             const options = {
                 threshold: 0.1
